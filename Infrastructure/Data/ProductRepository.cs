@@ -54,8 +54,6 @@ public class ProductRepository(StoreContext context) : IProductRepository
     return await context.Products.Select(x => x.Type).Distinct().ToListAsync();
   }
 
-
-
   public bool ProductExists(int id)
   {
     return context.Products.Any(x => x.Id == id);
